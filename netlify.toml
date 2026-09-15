@@ -1,7 +1,7 @@
 # Netlify configuration for SPARC website
 #
 # READ THIS BEFORE EDITING. This note was "corrected" to the opposite of the
-# truth once already (302a558, 25 Aug) and it took the dashboard off the live
+# truth once already (302a558, 25 Aug) and it took a working path off the live
 # domain for staff. Verify, do not assume:
 #
 #     curl -sI https://sparcsolutions.org | grep server            ->  GitHub.com
@@ -23,13 +23,10 @@
 #
 # CONSEQUENCE: GitHub Pages serves static files only — no rewrites, no
 # proxies, no custom headers. Anything that must appear under a path on the
-# live domain HAS TO BE A REAL FILE IN THIS REPO. That is why /devdash is
-# devdash/index.html and /accessibility is accessibility/index.html. The
-# proxy rules below are dormant on the live domain; they are kept only so the
-# Netlify preview mirrors production, and adding one is never a way to put a
-# new path on sparcsolutions.org.
-#
-# .github/workflows/devdash-guard.yml enforces the /devdash half of this.
+# live domain HAS TO BE A REAL FILE IN THIS REPO. That is why /accessibility
+# is accessibility/index.html. The proxy rules below are dormant on the live
+# domain; they are kept only so the Netlify preview mirrors production, and
+# adding one is never a way to put a new path on sparcsolutions.org.
 #
 # CNAME and .nojekyll are load-bearing, not leftovers from an old setup.
 # Deleting either takes sparcsolutions.org down until DNS is repointed.
@@ -51,20 +48,6 @@
   to = "https://stepstowardaccess.netlify.app/accessibility/:splat"
   status = 200
   force = true
-
-# Development Dashboard — deliberately NOT a proxy rule. See the header.
-#
-# /devdash on the live domain is devdash/index.html, a real file, because
-# GitHub Pages answers sparcsolutions.org and cannot proxy anything. A
-# `status = 200` rule here would work on main--sparcwebsite.netlify.app —
-# which is where it gets tested — and 404 for every member of staff. That is
-# exactly what happened on 21 Aug and again on 25 Aug.
-#
-# The dashboard is not copied into this repo either: it carries donor names,
-# addresses and gift amounts, and its own project sends a
-# Content-Security-Policy, X-Frame-Options and X-Robots-Tag that GitHub Pages
-# cannot send. It stays on its hardened origin and devdash/index.html
-# forwards staff to it.
 
 # Redirect board-portal.html to board-portal directory
 [[redirects]]

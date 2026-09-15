@@ -39,27 +39,16 @@ end of the public URL.
 GitHub Pages serves static files and nothing else: no rewrites, no proxies,
 no custom headers, no `netlify.toml`. So:
 
-- **A path on the live domain must be a real file in this repo.** `/devdash`
-  is `devdash/index.html`; `/accessibility` is `accessibility/index.html`.
-  Both also have proxy rules in `netlify.toml` — those rules are dormant and
-  are not what makes either path work.
+- **A path on the live domain must be a real file in this repo.**
+  `/accessibility` is `accessibility/index.html`. It also has a proxy rule in
+  `netlify.toml` — that rule is dormant and is not what makes the path work.
 - **A `status = 200` proxy is never the way to add a path.** It will work on
   `main--sparcwebsite.netlify.app`, which is where changes get tested, and
-  404 for every member of staff. That has shipped twice: 21 Aug, and again on
-  25 Aug in `6af0662`, which deleted `devdash/index.html` outright.
+  404 for every member of staff. That has shipped twice: 21 Aug and 25 Aug.
 - **Pretty URLs come from Pages' own directory-index handling**, not from
   `netlify.toml`.
 - **`CNAME` and `.nojekyll` are load-bearing**, not leftovers. Deleting
   either takes the site down until DNS is repointed.
-
-`.github/workflows/devdash-guard.yml` fails the build on the two shapes that
-break `/devdash`.
-
-The Development Dashboard is deliberately **not** copied into this repo. It
-holds donor names, addresses and gift amounts, and its own Netlify project
-sends a Content-Security-Policy, `X-Frame-Options` and `X-Robots-Tag` that
-GitHub Pages cannot send at all. It stays on its own hardened origin, and
-`devdash/index.html` forwards staff to it.
 
 ## Org constraints — READ BEFORE SUGGESTING EMAIL/AUTH SETUPS
 
