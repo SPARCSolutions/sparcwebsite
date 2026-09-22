@@ -1050,8 +1050,10 @@
             }
         }
 
-        // Match a preset donation level by value, so levels added in Bloomerang
-        // later (e.g. a $50 Skill Builders Circle) are picked up automatically.
+        // Match a preset donation level by value rather than by Bloomerang's
+        // generated element ids, so levels edited or added in Bloomerang are
+        // picked up without a change here. Falls back to "Other" if an amount
+        // has no level (which is how the Choose Your Own tier works).
         function presetFor(f, amount) {
             var radios = f.querySelectorAll('input[name="donation-level"]');
             for (var i = 0; i < radios.length; i++) {
