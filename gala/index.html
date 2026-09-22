@@ -1127,6 +1127,29 @@
             line-height: 0;
             margin-bottom: 12px;
         }
+        /* 20th-anniversary eyebrow — gold hairlines + diamonds flanking the text */
+        .page-gala .gala-anniversary {
+            max-width: 100%;
+            gap: 10px;
+            margin: 0 auto 14px;
+        }
+        .page-gala .gala-anniversary .gala-divider-diamond {
+            width: 7px;
+            height: 7px;
+        }
+        .page-gala .gala-anniversary-text {
+            flex-shrink: 0;
+            font-family: var(--gala-serif);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            /* Green rather than ochre: at this size the gold would only reach
+               3.4:1 on white, which passes AA for large text only. */
+            color: var(--gala-green-deep);
+        }
+
         .page-gala .gala-date {
             font-family: var(--gala-serif);
             font-size: 2rem;
@@ -1146,6 +1169,10 @@
         .page-gala .gala-datecard .gala-divider {
             margin: 16px auto;
             max-width: 180px;
+        }
+        .page-gala .gala-datecard .gala-anniversary {
+            margin: 0 auto 14px;
+            max-width: 100%;
         }
         .page-gala .gala-venue {
             font-family: var(--gala-serif);
@@ -1600,6 +1627,19 @@
             .page-gala .gala-arch {
                 max-width: 340px;
             }
+            /* Narrow screens: drop the hairlines so the eyebrow never widens the
+               date card past the viewport — the diamonds carry the motif. */
+            .page-gala .gala-anniversary {
+                gap: 7px;
+            }
+            .page-gala .gala-anniversary .gala-divider-rule {
+                display: none;
+            }
+            .page-gala .gala-anniversary-text {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                white-space: normal;
+            }
             .page-gala .gala-date {
                 font-size: 1.6rem;
             }
@@ -1765,6 +1805,13 @@
                             </g>
                         </svg>
                     </span>
+                    <div class="gala-divider gala-anniversary">
+                        <span class="gala-divider-rule"></span>
+                        <span class="gala-divider-diamond" aria-hidden="true"></span>
+                        <span class="gala-anniversary-text">Celebrating 20 Years &middot; 2006&ndash;2026</span>
+                        <span class="gala-divider-diamond" aria-hidden="true"></span>
+                        <span class="gala-divider-rule"></span>
+                    </div>
                     <p class="gala-date">Saturday, November 14, 2026</p>
                     <p class="gala-time">4 PM &ndash; 8 PM</p>
                     <div class="gala-divider" aria-hidden="true">
