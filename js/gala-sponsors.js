@@ -22,15 +22,19 @@
 
   /* Pledges to hide from the public carousel even if they're still marked
      Approved in the backend sheet (e.g. test submissions, or a pledge whose
-     logo is already curated as a static slide in the page HTML so it would
-     otherwise appear twice). Match is by sponsor name, case-insensitive.
-     Remove an entry here once the matching row has been deleted / un-approved
-     in the "Gala Sponsor Pledges" sheet. */
+     uploaded logo can't be shown as-is). Match is by sponsor name,
+     case-insensitive. Remove an entry here once the matching row has been
+     deleted / un-approved in the "Gala Sponsor Pledges" sheet.
+
+     A pledge that duplicates a curated static slide does NOT need an entry:
+     render() skips any pledge whose name matches a curated slide's img alt
+     (or its data-pledge-name, when the two names differ). */
   var HIDDEN_SPONSOR_NAMES = [
     'specially adapted resource clubs', // "THIS IS A TEST" pledge submitted 2026-07-13
     'the shrivastava family', // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
     'exterior medics', // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
-    'anthem healthkeepers plus' // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
+    'anthem healthkeepers plus', // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
+    'transurban' // uploaded JPEG carries an EXIF rotate-90 flag, so browsers show it sideways; /gala/ uses the upright express-lanes-transurban.svg
   ];
 
   function isConfigured() {
@@ -39,6 +43,26 @@
 
   function isHidden(name) {
     return HIDDEN_SPONSOR_NAMES.indexOf(String(name || '').trim().toLowerCase()) !== -1;
+  }
+
+  /* Comparable form of a sponsor name: "Backflow Technology, LLC" and
+     "backflow technology llc" are the same sponsor. */
+  function nameKey(name) {
+    return String(name || '').toLowerCase().replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  /* Names already covered by a curated slide on this track. */
+  function curatedKeys(track) {
+    var keys = {};
+    (track._canonical || []).forEach(function (node) {
+      if (node.nodeType !== 1) { return; }
+      var img = node.querySelector('img');
+      if (img && img.alt) { keys[nameKey(img.alt)] = true; }
+      var alias = node.getAttribute('data-pledge-name');
+      if (alias) { keys[nameKey(alias)] = true; }
+    });
+    return keys;
   }
 
   /* Fetch the approved, publicly-listable sponsors from the backend.
@@ -165,7 +189,15 @@
      for a seamless loop, then (re)start the animation. */
   function render(track) {
     var base = (track._canonical || []).slice();
-    (track._dynamic || []).forEach(function (rec) { base.push(buildSlide(rec)); });
+    // One slide per sponsor: skip pledges already curated in the HTML and
+    // repeat submissions of the same pledge.
+    var seen = curatedKeys(track);
+    (track._dynamic || []).forEach(function (rec) {
+      var key = nameKey(rec.name);
+      if (key && seen[key]) { return; }
+      if (key) { seen[key] = true; }
+      base.push(buildSlide(rec));
+    });
 
     track.innerHTML = '';
     base.forEach(function (node) { track.appendChild(node.cloneNode(true)); });
