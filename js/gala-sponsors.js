@@ -30,7 +30,8 @@
     'specially adapted resource clubs', // "THIS IS A TEST" pledge submitted 2026-07-13
     'the shrivastava family', // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
     'exterior medics', // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
-    'anthem healthkeepers plus' // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
+    'anthem healthkeepers plus', // curated static slide already in the carousel HTML; hide the pledge-feed duplicate
+    'aglow dental studio' // curated static slide (pledge feed has a mistyped website, www.aglowdental.co.com); hide the pledge-feed duplicate
   ];
 
   function isConfigured() {
