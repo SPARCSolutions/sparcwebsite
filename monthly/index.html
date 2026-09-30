@@ -406,9 +406,147 @@
             line-height: 1.7;
             margin-bottom: 1rem;
         }
+        /* Give: Bloomerang monthly donation form */
+        .give-section {
+            padding: 80px 0;
+            background: var(--off-white);
+            scroll-margin-top: 100px;
+        }
+        .give-section .section-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 35px;
+        }
+        .give-section h2 { color: var(--primary-blue); margin-bottom: 1rem; }
+        .give-section .section-header p {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+        }
+        .give-card {
+            background: white;
+            border-radius: 14px;
+            padding: 34px 32px;
+            max-width: 820px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 43, 80, 0.10);
+            border: 1px solid rgba(0, 83, 155, 0.10);
+        }
+        .give-loading {
+            color: var(--medium-gray);
+            text-align: center;
+            padding: 30px 0;
+        }
+        .give-secure {
+            max-width: 820px;
+            margin: 16px auto 0;
+            color: var(--medium-gray);
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .give-secure svg { flex-shrink: 0; }
+        .visually-hidden {
+            position: absolute;
+            width: 1px; height: 1px;
+            margin: -1px; padding: 0;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Bloomerang form styling, matched to the rest of the page */
+        .give-card .donation-form h3 {
+            color: var(--sparc-dark-navy);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            margin: 0 0 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--off-white);
+        }
+        .give-card .donation-form label { font-family: 'Open Sans', sans-serif; }
+        .give-card .donation-form .field { padding: 7px 0; }
+        .give-card .donation-form .field label { font-weight: 500; margin-bottom: 5px; }
+        .give-card .donation-form .field input[type="text"],
+        .give-card .donation-form .field input[type="email"],
+        .give-card .donation-form .field input[type="tel"],
+        .give-card .donation-form .field input[type="date"],
+        .give-card .donation-form .field input[type="number"],
+        .give-card .donation-form .field select,
+        .give-card .donation-form .field textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Open Sans', sans-serif;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+        }
+        .give-card .donation-form .field input:focus,
+        .give-card .donation-form .field select:focus,
+        .give-card .donation-form .field textarea:focus {
+            border-color: var(--primary-blue);
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 1px;
+        }
+        .give-card .donation-form .field.radio label,
+        .give-card .donation-form .field.checkbox label {
+            display: block;
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            box-sizing: border-box;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .give-card .donation-form .field.radio label:hover,
+        .give-card .donation-form .field.checkbox label:hover {
+            background: var(--off-white);
+            border-color: var(--primary-blue);
+        }
+        .give-card .donation-form .field.radio input,
+        .give-card .donation-form .field.checkbox input { width: auto; margin-right: 10px; }
+        .give-card .donation-form .field.recurring label {
+            background: rgba(76, 187, 23, 0.10);
+            border-color: var(--sparc-kelly-green);
+            font-weight: 600;
+        }
+        .give-card .donation-form .field.other-amount { padding-left: 6px; }
+        .give-card .donation-form #other-amount { width: 110px; }
+        .give-card .donation-form .field.label label { border: 0; padding: 0; }
+        .give-card .donation-form #card-element,
+        .give-card .donation-form #stripe-cc-fields {
+            max-width: 100%;
+        }
+        .give-card .donation-form .btn-submit-donation,
+        .give-card .donation-form #express-submit {
+            background: var(--sparc-kelly-green);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s ease;
+        }
+        .give-card .donation-form .btn-submit-donation:hover,
+        .give-card .donation-form #express-submit:hover {
+            background: var(--sparc-kelly-green-dark);
+        }
+
         @media (max-width: 768px) {
             .why-grid { grid-template-columns: 1fr; }
             .hero-stats { gap: 30px; }
+            .give-card { padding: 24px 18px; }
             .participant-spotlight .spotlight-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -575,13 +713,13 @@
                     <div class="tier-amount">$10<span class="per">/month</span></div>
                     <div class="tier-name">The Daily Spark</div>
                     <p class="tier-desc">Stocks a day of materials that make learning, creating, and practicing skills possible. Art supplies, sensory tools, cooking ingredients, adaptive equipment — the everyday essentials that turn a center into a classroom, a studio, and a second home.</p>
-                    <a href="https://donate.stripe.com/aFacN5a0PeSo1kp8637bW04" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $10 per month to The Daily Spark (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="10" aria-label="Give $10 per month to The Daily Spark (opens the monthly giving form below with this level selected)">
                         Give $10 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -590,13 +728,13 @@
                     <div class="tier-amount">$25<span class="per">/month</span></div>
                     <div class="tier-name">The Belonging Circle</div>
                     <p class="tier-desc">Provides a week of daily feelings-inventory tools, sensory supports, and small-group materials that help keep 96.8% of SPARC participants happy and engaged. This is the tier where belonging becomes routine.</p>
-                    <a href="https://donate.stripe.com/00w6oH6OD25CaUZ9a77bW05" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $25 per month to The Belonging Circle (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="25" aria-label="Give $25 per month to The Belonging Circle (opens the monthly giving form below with this level selected)">
                         Give $25 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -606,13 +744,13 @@
                     <div class="tier-amount">$50<span class="per">/month</span></div>
                     <div class="tier-name">The Skill Builders Circle</div>
                     <p class="tier-desc">Powers a structured life skills class that builds real-world confidence — step by step, skill by skill. From money handling to meal prep to self-advocacy, these are the classes that translate directly into everyday confidence.</p>
-                    <a href="https://donate.stripe.com/3cI00j7SHh0w2ot1HF7bW06" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $50 per month to The Skill Builders Circle (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="50" aria-label="Give $50 per month to The Skill Builders Circle (opens the monthly giving form below with this level selected)">
                         Give $50 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -621,13 +759,13 @@
                     <div class="tier-amount">$100<span class="per">/month</span></div>
                     <div class="tier-name">The Community Connectors</div>
                     <p class="tier-desc">Makes an inclusive community outing possible for 10 people. Your gift funds the admissions and support that turn a trip to the museum, farmers market, or St. Anne's Food Pantry into a moment of genuine civic participation.</p>
-                    <a href="https://donate.stripe.com/4gMcN51ujbGcgfj0DB7bW07" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $100 per month to The Community Connectors (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="100" aria-label="Give $100 per month to The Community Connectors (opens the monthly giving form below with this level selected)">
                         Give $100 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -636,13 +774,13 @@
                     <div class="tier-amount">$250<span class="per">/month</span></div>
                     <div class="tier-name">The Movement Circle</div>
                     <p class="tier-desc">Sponsors a full month of Zumba and adaptive movement for 30 participants — supporting physical health, mood regulation, and joy.</p>
-                    <a href="https://donate.stripe.com/7sYeVd5KzcKg3sx4TR7bW08" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $250 per month to The Movement Circle (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="250" aria-label="Give $250 per month to The Movement Circle (opens the monthly giving form below with this level selected)">
                         Give $250 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -651,13 +789,13 @@
                     <div class="tier-amount">$500<span class="per">/month</span></div>
                     <div class="tier-name">The Progress Partners</div>
                     <p class="tier-desc">Provides a full semester of skills classes — the kind of sustained, measurable growth that turns "I can't" into "I did."</p>
-                    <a href="https://donate.stripe.com/7sY14ndd18u03sx4TR7bW09" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $500 per month to The Progress Partners (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="500" aria-label="Give $500 per month to The Progress Partners (opens the monthly giving form below with this level selected)">
                         Give $500 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -666,13 +804,13 @@
                     <div class="tier-amount">$750<span class="per">/month</span></div>
                     <div class="tier-name">The Attendance Circle</div>
                     <p class="tier-desc">Covers one month of SPARC attendance for a participant, directly closing the full-scholarship gap for a family who needs it.</p>
-                    <a href="https://donate.stripe.com/dRmdR98WLeSoe7b3PN7bW0a" class="tier-cta" target="_blank" rel="noopener noreferrer" aria-label="Give $750 per month to The Attendance Circle (opens Stripe in a new tab)">
+                    <a href="#give" class="tier-cta" data-amount="750" aria-label="Give $750 per month to The Attendance Circle (opens the monthly giving form below with this level selected)">
                         Give $750 / Month
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment via Stripe
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
@@ -681,17 +819,43 @@
                     <div class="tier-amount">$ You</div>
                     <div class="tier-name">Choose Your Own</div>
                     <p class="tier-desc">Whatever you can give, monthly, makes a difference. Choose your own amount and we'll put it to work supporting belonging for adults with severe and multiple disabilities.</p>
-                    <a href="/donate-checkout/?recurring=true" class="tier-cta" aria-label="Choose your own monthly gift amount">
+                    <a href="#give" class="tier-cta" data-amount="other" aria-label="Choose your own monthly gift amount on the form below">
                         Set My Amount
                         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                     </a>
                     <div class="tier-secure">
                         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-                        Secure payment processing
+                        Secure payment via Bloomerang
                     </div>
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- Give: Bloomerang monthly donation form -->
+    <section class="give-section" id="give">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Your Monthly Gift</h2>
+                <p>Pick a circle above and it lands here with the amount chosen and <strong>&ldquo;make this a recurring donation&rdquo; already checked, set to Monthly</strong>. You can change either one before you submit.</p>
+            </div>
+
+            <div class="give-card">
+                <p id="give-form-loading" class="give-loading">Loading the secure donation form&hellip;</p>
+                <!-- Bloomerang monthly giving form (form 10800128) -->
+                <script src="https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/speciallyadaptedresourceclubs/.widget-js/10800128.js" type="text/javascript"></script>
+                <noscript>
+                    <p>This donation form needs JavaScript. Please email <a href="mailto:erica@sparcsolutions.org">erica@sparcsolutions.org</a> or call <a href="tel:571-407-1807">(571) 407-1807</a> and we will set up your monthly gift for you.</p>
+                </noscript>
+            </div>
+
+            <p class="give-secure">
+                <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                Secure payment via Bloomerang. SPARC never sees or stores your card details.
+            </p>
+
+            <p class="visually-hidden" id="give-status" role="status" aria-live="polite"></p>
         </div>
     </section>
     </main>
@@ -742,11 +906,15 @@
                 </div>
                 <div class="faq-item">
                     <h3>Can I change or cancel my monthly gift?</h3>
-                    <p>Absolutely. Every Stripe receipt email includes a secure link to manage your subscription — you can update your payment method, change your amount, or cancel at any time. You can also reach Erica Gaffney at <a href="mailto:erica@sparcsolutions.org" style="color: var(--primary-blue); font-weight: 600;">erica@sparcsolutions.org</a> for any help.</p>
+                    <p>Absolutely — at any time, with no questions asked. Email Erica Gaffney at <a href="mailto:erica@sparcsolutions.org" style="color: var(--primary-blue); font-weight: 600;">erica@sparcsolutions.org</a> or call <a href="tel:571-407-1807" style="color: var(--primary-blue); font-weight: 600;">(571) 407-1807</a> and we'll change your amount, update your payment method, pause your gift, or stop it entirely. Your emailed receipt lists the same contact.</p>
                 </div>
                 <div class="faq-item">
                     <h3>Is my payment information secure?</h3>
-                    <p>Yes. All monthly gifts are processed by <a href="https://stripe.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); font-weight: 600;">Stripe</a>, a PCI‑DSS Level 1 certified payment provider trusted by millions of businesses worldwide. SPARC never sees or stores your card details.</p>
+                    <p>Yes. Monthly gifts are made on SPARC's secure <a href="https://bloomerang.co" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); font-weight: 600;">Bloomerang</a> donation form and processed on PCI‑compliant payment infrastructure. Your card details go straight to the payment processor — SPARC never sees or stores them.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which payment methods can I use for a monthly gift?</h3>
+                    <p>Credit or debit card and bank account (ACH) both work for recurring gifts. PayPal and Venmo appear on the form for one-time gifts only — they can't be used for a monthly gift.</p>
                 </div>
                 <div class="faq-item">
                     <h3>How is my gift used?</h3>
@@ -842,6 +1010,146 @@
             <img src="/images/Powered by Google.png" alt="Powered by Google" style="height: 160px; width: auto;">
         </div>
     </div>
+
+    <script>
+    /* Monthly giving: drive the embedded Bloomerang form (10800128).
+       Every tier button selects its amount and turns on a Monthly recurring gift.
+       Without JS the buttons still jump to the form; the donor picks the level there. */
+    (function () {
+        function form() { return document.getElementById('donation-form'); }
+
+        function fire(el, type) {
+            el.dispatchEvent(new Event(type, { bubbles: true }));
+        }
+
+        function announce(msg) {
+            var live = document.getElementById('give-status');
+            if (live) { live.textContent = msg; }
+        }
+
+        // Tick "Show my support by making this a recurring donation" and set Monthly.
+        // A real click() is used so Bloomerang's own handler reveals Frequency + Start Date.
+        function ensureMonthlyRecurring() {
+            var f = form();
+            if (!f) { return; }
+            var recurring = f.querySelector('#recurring');
+            if (recurring && !recurring.checked) { recurring.click(); }
+            var frequency = f.querySelector('#frequency');
+            if (frequency && frequency.value !== 'Monthly') {
+                frequency.value = 'Monthly';
+                fire(frequency, 'change');
+            }
+            // Bloomerang fills Start Date in m/d/yyyy, which an <input type="date">
+            // rejects — so the required field lands empty. Default it to today.
+            var startDate = f.querySelector('#start-date');
+            if (startDate && !startDate.value) {
+                var now = new Date();
+                now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                startDate.value = now.toISOString().slice(0, 10);
+                fire(startDate, 'change');
+            }
+        }
+
+        // Match a preset donation level by value rather than by Bloomerang's
+        // generated element ids, so levels edited or added in Bloomerang are
+        // picked up without a change here. Falls back to "Other" if an amount
+        // has no level (which is how the Choose Your Own tier works).
+        function presetFor(f, amount) {
+            var radios = f.querySelectorAll('input[name="donation-level"]');
+            for (var i = 0; i < radios.length; i++) {
+                var radio = radios[i];
+                if (radio.id === 'other-option' || !radio.value) { continue; }
+                if (Math.round(parseFloat(radio.value) * 100) === Math.round(amount * 100)) {
+                    return radio;
+                }
+            }
+            return null;
+        }
+
+        function selectAmount(amount) {
+            var f = form();
+            if (!f) { return; }
+            var other = f.querySelector('#other-amount');
+            var preset = presetFor(f, amount);
+            if (preset) {
+                if (other && other.value) {   // drop a stale "Other" amount first
+                    other.value = '';
+                    fire(other, 'change');
+                }
+                preset.click();
+            } else {
+                // No preset level for this amount — use "Other".
+                if (!other) { return; }
+                other.value = String(amount);
+                other.click();          // selects the "Other" radio
+                fire(other, 'change');  // updates the donate button total
+            }
+            announce('$' + amount + ' per month selected. This gift is set to repeat monthly.');
+        }
+
+        function chooseOwnAmount() {
+            var other = document.getElementById('other-amount');
+            if (!other) { return; }
+            other.click();
+            other.focus();
+            announce('Enter your own monthly amount. This gift is set to repeat monthly.');
+        }
+
+        function apply(choice) {
+            ensureMonthlyRecurring();
+            if (choice === 'other') {
+                chooseOwnAmount();
+            } else if (choice !== null && !isNaN(choice)) {
+                selectAmount(choice);
+            }
+        }
+
+        // The Bloomerang widget builds the form asynchronously.
+        function whenFormReady(callback) {
+            var waited = 0;
+            (function poll() {
+                var f = form();
+                if (f && f.querySelector('#recurring') && f.querySelector('input[name="donation-level"]')) {
+                    var loading = document.getElementById('give-form-loading');
+                    if (loading) { loading.style.display = 'none'; }
+                    // Give Bloomerang's own handlers a moment to bind.
+                    setTimeout(callback, 250);
+                    return;
+                }
+                waited += 200;
+                if (waited < 30000) { setTimeout(poll, 200); }
+            })();
+        }
+
+        function parseChoice(raw) {
+            if (raw === 'other') { return 'other'; }
+            var value = parseFloat(raw);
+            return isNaN(value) ? null : value;
+        }
+
+        // Tier buttons. The href="#give" still does the scrolling.
+        document.addEventListener('click', function (event) {
+            var link = event.target.closest && event.target.closest('a[data-amount]');
+            if (!link) { return; }
+            var choice = parseChoice(link.getAttribute('data-amount'));
+            whenFormReady(function () { apply(choice); });
+        });
+
+        // Deep links: /monthly/?amount=50 or ?amount=other
+        var deepLink = null;
+        var match = /[?&]amount=([^&]+)/.exec(window.location.search);
+        if (match) { deepLink = parseChoice(decodeURIComponent(match[1])); }
+
+        // Recurring is on by default on this page, whichever level the donor picks.
+        whenFormReady(function () {
+            apply(deepLink);
+            if (deepLink !== null && window.location.hash !== '#give') {
+                var section = document.getElementById('give');
+                if (section) { section.scrollIntoView(); }
+            }
+        });
+    })();
+    </script>
 
     <script src="/js/main.js"></script>
 </body>
