@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 190" width="300" height="190" role="img" aria-label="Angie Erschens">
-  <rect width="300" height="190" fill="#002B50"/>
-  <text x="150" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="bold" fill="white">Angie</text>
-  <text x="150" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="bold" fill="white">Erschens</text>
-  <text x="150" y="158" text-anchor="middle" font-family="'Open Sans', Arial, sans-serif" font-size="12" letter-spacing="1.1" fill="#9fc4e8">MYRTLE BEACH GETAWAY</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1350" width="2400" height="1350">
+<rect width="2400" height="1350" fill="#16324F"/>
+<rect width="2400" height="19" fill="#4CAF50"/>
+<g font-family="Arial, Helvetica, sans-serif" font-weight="bold" text-anchor="middle">
+<text x="1200" y="740" font-size="240" fill="#FFFFFF">Angie Erschens</text>
+</g>
 </svg>
