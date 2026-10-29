@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD1XQ0NDCD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PD1XQ0NDCD');
+    </script>
+    <!-- Bloomerang Website Tracking -->
+    <script src="https://api.bloomerang.co/v1/WebsiteVisit?ApiKey=pub_0671a94c-634e-11f0-9fbb-06179723032d" type="text/javascript"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tickets to An Evening to SPARCle 2026 are sold out, but you can still support SPARC. Sponsor the evening or make a gift of any amount.">
+    <title>Support the Gala | An Evening to SPARCle | SPARC</title>
+    <link rel="canonical" href="https://sparcsolutions.org/gala-support/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <style>
+        /* ============================================================
+           2026 SAFARI THEME tokens — mirrored from /gala/ so this page
+           matches "An Evening to SPARCle". Scoped to .page-gala.
+           ============================================================ */
+        .page-gala {
+            --gala-green-deep:  #184030;
+            --gala-green-dark:  #082820;
+            --gala-green-sage:  #587860;
+            --gala-gold:        #D8A040;
+            --gala-gold-bright: #E8B850;
+            --gala-gold-deep:   #B88020;
+            --gala-ivory:       #F8F8F0;
+            --gala-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            background: var(--gala-ivory);
+        }
+
+        .page-gala .gala-sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .page-gala a:focus-visible,
+        .page-gala button:focus-visible,
+        .page-gala .btn:focus-visible,
+        .page-gala input:focus-visible,
+        .page-gala select:focus-visible,
+        .page-gala textarea:focus-visible,
+        .page-gala [tabindex]:focus-visible,
+        .page-gala [onclick]:focus-visible {
+            outline: 3px solid var(--gala-gold-deep);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* ---------- Gold-diamond divider ---------- */
+        .page-gala .gala-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            max-width: 320px;
+            margin: 18px auto;
+        }
+        .page-gala .gala-divider .gala-divider-rule { flex: 1; height: 1px; background: var(--gala-gold); opacity: 0.85; }
+        .page-gala .gala-divider .gala-divider-diamond { width: 12px; height: 12px; flex-shrink: 0; transform: rotate(45deg); background: var(--gala-gold); }
+        .page-gala .gala-section-divider { background: var(--gala-ivory); padding: 26px 0; }
+
+        /* ---------- Hero ---------- */
+        .page-gala .pledge-hero {
+            background: linear-gradient(160deg, var(--gala-green-deep) 0%, var(--gala-green-dark) 100%);
+            padding: 132px 0 64px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-gala .pledge-hero .container { position: relative; z-index: 2; }
+        .page-gala .pledge-eyebrow {
+            display: inline-block;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--gala-gold); margin-bottom: 14px;
+        }
+        .page-gala .pledge-hero h1 {
+            font-family: var(--gala-serif); font-weight: 600;
+            font-size: 3.2rem; line-height: 1.1;
+            color: var(--gala-ivory); margin-bottom: 8px;
+        }
+        .page-gala .pledge-hero-sub {
+            max-width: 640px; margin: 14px auto 0;
+            color: rgba(248, 248, 240, 0.9); font-size: 1.12rem; line-height: 1.7;
+        }
+        .page-gala .pledge-hero-meta {
+            margin-top: 22px; font-family: var(--gala-serif); font-style: italic;
+            font-size: 1.3rem; color: var(--gala-gold);
+        }
+
+
+        /* ---------- Sold-out ribbon in the hero ---------- */
+        .page-gala .support-soldout {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(200, 16, 46, 0.14); border: 1.5px solid #e4a0aa;
+            color: #ffd9de; border-radius: 999px; padding: 8px 18px;
+            font-size: 0.82rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        /* ---------- Support section ---------- */
+        .page-gala .support-section { background: var(--gala-ivory); padding: 60px 0 80px; }
+        .page-gala .support-section .container { max-width: 66rem; }
+        .page-gala .section-header { text-align: center; margin-bottom: 30px; }
+        .page-gala .section-header h2 {
+            font-family: var(--gala-serif); font-weight: 600;
+            color: var(--gala-green-deep); font-size: 2.5rem; margin-bottom: 0.5rem;
+        }
+        .page-gala .section-header p { color: var(--gala-green-deep); margin: 0 auto; line-height: 1.7; }
+
+        /* Sponsorship-level chips: tapping one fills the amount in the form below */
+        .page-gala .level-chips {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px;
+            margin: 0 auto 36px;
+        }
+        .page-gala .level-chip {
+            display: inline-flex; flex-direction: column; align-items: center; gap: 2px;
+            min-width: 128px; padding: 12px 18px;
+            background: #fff; border: 1.5px solid var(--gala-gold); border-radius: 14px;
+            color: var(--gala-green-deep); cursor: pointer; font-family: var(--font-primary);
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .page-gala .level-chip:hover { transform: translateY(-3px); border-color: var(--gala-gold-deep); box-shadow: 0 8px 24px rgba(24,64,48,0.10); }
+        .page-gala .level-chip.is-selected { background: var(--gala-green-deep); color: var(--gala-ivory); border-color: var(--gala-green-deep); }
+        .page-gala .level-chip .lc-name { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+        .page-gala .level-chip .lc-amount { font-family: var(--gala-serif); font-weight: 700; font-size: 1.45rem; color: var(--gala-gold-deep); }
+        .page-gala .level-chip.is-selected .lc-amount { color: var(--gala-gold-bright); }
+        .page-gala .level-note { text-align: center; color: var(--gala-green-sage); font-size: 0.95rem; margin: -22px auto 34px; }
+
+        /* Card around the Bloomerang form */
+        .page-gala .support-card {
+            background: #fff; border: 1.5px solid var(--gala-gold); border-radius: 14px;
+            padding: 34px 36px; box-shadow: 0 10px 40px rgba(24, 64, 48, 0.08);
+        }
+        .page-gala .support-card h3 { font-family: var(--gala-serif); font-weight: 600; color: var(--gala-green-deep); font-size: 1.7rem; text-align: center; margin-bottom: 4px; }
+        .page-gala .support-card .sc-sub { text-align: center; color: var(--gala-green-sage); margin-bottom: 18px; }
+        .page-gala .support-card .form-wrapper { padding: 0; }
+
+        /* ========== Bloomerang Donation Form Overrides ========== */
+        #donation-form-container .donation-form {
+            font-family: var(--font-primary);
+        }
+        #donation-form-container .donation-form label {
+            color: var(--sparc-charcoal);
+            font-family: var(--font-primary);
+            font-weight: 400;
+        }
+        #donation-form-container .donation-form .section {
+            padding: 15px 0;
+        }
+        #donation-form-container .donation-form h3 {
+            font-family: var(--font-heading);
+            color: var(--sparc-dark-navy);
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--sparc-kelly-green);
+        }
+
+        /* Donation level radio buttons - card style */
+        #donation-form-container .donation-form .section.donation .field.radio {
+            margin-bottom: 6px;
+        }
+        #donation-form-container .donation-form .section.donation .field.radio label {
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 14px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            gap: 10px;
+            line-height: 1.4;
+        }
+        #donation-form-container .donation-form .section.donation .field.radio label:hover {
+            border-color: var(--sparc-royal-blue);
+            background: rgba(0, 83, 155, 0.03);
+        }
+        #donation-form-container .donation-form .section.donation .field.radio input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--sparc-royal-blue);
+            flex-shrink: 0;
+        }
+        #donation-form-container .donation-form .section.donation .field.radio:has(input:checked) label {
+            border-color: var(--sparc-royal-blue);
+            background: rgba(0, 83, 155, 0.05);
+        }
+        #donation-form-container .donation-form .section.donation .field.radio:has(input:checked) .label {
+            font-weight: 600;
+            color: var(--sparc-dark-navy);
+        }
+
+        /* Other amount */
+        #donation-form-container .donation-form #other-amount {
+            width: 100%;
+            max-width: 200px;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+        }
+
+        /* Text inputs, selects, textareas */
+        #donation-form-container .donation-form .field input[type="text"],
+        #donation-form-container .donation-form .field input[type="email"],
+        #donation-form-container .donation-form .field input[type="tel"],
+        #donation-form-container .donation-form .field input[type="number"],
+        #donation-form-container .donation-form .field input[type="date"],
+        #donation-form-container .donation-form .field select,
+        #donation-form-container .donation-form .field textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: var(--font-primary);
+            transition: border-color var(--transition-fast);
+            box-sizing: border-box;
+        }
+        #donation-form-container .donation-form .field input:focus,
+        #donation-form-container .donation-form .field select:focus,
+        #donation-form-container .donation-form .field textarea:focus {
+            border-color: var(--sparc-royal-blue);
+            outline: none;
+        }
+        #donation-form-container .donation-form .field label .label {
+            font-weight: 500;
+        }
+        #donation-form-container .donation-form .field {
+            padding: 8px 0;
+        }
+
+        /* Checkbox sections (recurring, true impact, consent) */
+        #donation-form-container .donation-form .section.recurring label,
+        #donation-form-container .donation-form .section.true-impact label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        #donation-form-container .donation-form input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--sparc-royal-blue);
+        }
+
+        /* Payment type radios - inline pill style */
+        #donation-form-container .donation-form .section.payment .field.radio {
+            display: inline-block;
+            margin-right: 6px;
+            margin-bottom: 8px;
+        }
+        #donation-form-container .donation-form .section.payment .field.radio label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 14px;
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: 0.9rem;
+        }
+        #donation-form-container .donation-form .section.payment .field.radio label:hover {
+            border-color: var(--sparc-royal-blue);
+        }
+        #donation-form-container .donation-form .section.payment .field.radio:has(input:checked) label {
+            border-color: var(--sparc-royal-blue);
+            background: rgba(0, 83, 155, 0.05);
+            font-weight: 600;
+        }
+
+        /* Stripe card element */
+        #donation-form-container #card-element {
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+        #donation-form-container #card-errors {
+            color: #c0392b;
+            font-size: 0.85rem;
+            margin-top: 6px;
+        }
+
+        /* Submit button */
+        #donation-form-container .btn-submit-donation {
+            background: var(--sparc-kelly-green) !important;
+            color: white !important;
+            border: none !important;
+            padding: 16px 40px !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            font-family: var(--font-heading) !important;
+            border-radius: 8px !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            transition: background 0.3s ease, transform 0.3s ease !important;
+            margin-top: 10px;
+        }
+        #donation-form-container .btn-submit-donation:hover:not(.disabled) {
+            background: var(--sparc-kelly-green-dark) !important;
+            transform: translateY(-2px);
+        }
+        #donation-form-container .btn-submit-donation.disabled {
+            opacity: 0.6;
+            cursor: not-allowed !important;
+        }
+
+        /* PayPal button */
+        #donation-form-container #paypal-button-container {
+            margin-top: 15px;
+        }
+
+        /* Errors */
+        #donation-form-container .donation-form .errors {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Success & Processing states */
+        #donation-form-container .donation-success,
+        #donation-processing-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        #donation-form-container .donation-success h2,
+        #donation-processing-container h2 {
+            color: var(--sparc-dark-navy);
+            font-family: var(--font-heading);
+            margin-bottom: 10px;
+        }
+        #donation-form-container .donation-success p,
+        #donation-processing-container p {
+            color: var(--sparc-charcoal);
+            font-size: 1.05rem;
+        }
+
+        /* Required star */
+        #donation-form-container .required-star {
+            color: #c0392b;
+        }
+
+        /* Validation error labels */
+        #donation-form-container label.error {
+            color: #c0392b !important;
+            font-size: 0.85rem;
+            font-weight: 400;
+            padding: 2px 0 !important;
+        }
+
+        /* Recurring info label */
+        #donation-form-container .recurring-paypal-venmo-label-info .label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            #donation-form-container .donation-form .section.payment .field.radio {
+                display: block;
+                margin-right: 0;
+            }
+            .checkout-container {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Gala colouring on top of the shared donation-form overrides */
+        .page-gala #donation-form-container .donation-form h3 { color: var(--gala-green-deep); border-bottom-color: var(--gala-gold); }
+        .page-gala #donation-form-container .donation-form .field input:focus,
+        .page-gala #donation-form-container .donation-form .field select:focus,
+        .page-gala #donation-form-container .donation-form .field textarea:focus { border-color: var(--gala-green-deep); }
+        .page-gala #donation-form-container .donation-form input[type="checkbox"],
+        .page-gala #donation-form-container .donation-form input[type="radio"] { accent-color: var(--gala-green-deep); }
+        .page-gala #donation-form-container .donation-form .section.payment .field.radio:has(input:checked) label { border-color: var(--gala-green-deep); background: rgba(24,64,48,0.05); }
+        .page-gala #donation-form-container .donation-form #donation-amount { font-size: 1.25rem; font-weight: 600; max-width: 260px; }
+        .page-gala #donation-form-container .donation-form .btn-submit,
+        .page-gala #donation-form-container .donation-form input[type="submit"],
+        .page-gala #donation-form-container .donation-form button[type="submit"] {
+            background: linear-gradient(180deg, var(--gala-gold-bright) 0%, var(--gala-gold) 100%);
+            color: var(--gala-green-deep); border: 1px solid var(--gala-gold-bright); border-radius: 999px;
+            font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            padding: 14px 34px; cursor: pointer; font-size: 1rem;
+        }
+
+        /* ---------- Acacia band + CTA ---------- */
+        .page-gala .cta-section { background: linear-gradient(160deg, var(--gala-green-deep) 0%, var(--gala-green-dark) 100%); }
+        .page-gala .cta-content h2 { font-family: var(--gala-serif); font-weight: 600; color: var(--gala-ivory); }
+        .page-gala .cta-content p { color: var(--gala-ivory); }
+        .page-gala .cta-section .btn-white { background: linear-gradient(180deg, var(--gala-gold-bright) 0%, var(--gala-gold) 100%); color: var(--gala-green-deep); }
+        .page-gala .cta-section .btn-white:hover { background: linear-gradient(180deg, #f0c968 0%, var(--gala-gold-bright) 100%); color: var(--gala-green-deep); }
+        .page-gala .cta-section .btn-secondary { border-color: var(--gala-gold); color: var(--gala-ivory); }
+        .page-gala .cta-section .btn-secondary:hover { background: var(--gala-gold); color: var(--gala-green-deep); }
+
+        @media (max-width: 768px) {
+            .page-gala .pledge-hero { padding: 100px 0 48px; }
+            .page-gala .pledge-hero h1 { font-size: 2.2rem; }
+            .page-gala .section-header h2 { font-size: 2rem; }
+            .page-gala .support-card { padding: 26px 18px; }
+            .page-gala .level-chip { min-width: calc(50% - 6px); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .page-gala .level-chip:hover { transform: none; }
+        }
+    </style>
+</head>
+<body class="page-gala">
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">
+                <img src="/images/logo.png" alt="SPARC - Specially Adapted Resource Centers" style="height: 50px; width: auto;">
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="/about/" class="nav-link">About</a>
+                    <div class="dropdown-menu">
+                        <a href="/team/">Our Team</a>
+                        <a href="/board/">Board of Directors</a>
+                        <a href="/financials/">Financials</a>
+                        <a href="/strategic-plan/">Strategic Plan</a>
+                        <a href="/news/">News</a>
+                        <a href="/compliance/">ADA Compliance</a>
+                        <a href="/podcast/">The Access Point Podcast</a>
+                        <a href="/newsletter/">Newsletter</a>
+                        <a href="/stories/">Stories & Impact</a>
+                        <a href="/photogallery/">Photo Gallery</a>
+                    </div>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="/programs/" class="nav-link">Programs</a>
+                    <div class="dropdown-menu">
+                        <a href="/programs/sensory-lab/">Mobile Exploration Lab</a>
+                        <a href="/programs/enrollment/">Enrollment Information</a>
+                        <a href="/programs/enrollment/#pricing">Pricing</a>
+                    </div>
+                </li>
+                <li><a href="/locations/" class="nav-link">Locations</a></li>
+                <li class="nav-item-dropdown">
+                    <a href="/advocacy/" class="nav-link">Advocacy</a>
+                    <div class="dropdown-menu">
+                        <a href="/summit/">A Call to Conscience Summit</a>
+                        <a href="/ART/">Accessibility in Real Time</a>
+                        <a href="/accesstrails/">Access Trails NOVA</a>
+                    </div>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="/events/" class="nav-link active">Events</a>
+                    <div class="dropdown-menu">
+                        <a href="/gala/">An Evening to SPARCle</a>
+                        <a href="/summit/">A Call to Conscience</a>
+                        <a href="/bingo/">Bingo</a>
+                        <a href="/photogallery/">Photo Gallery</a>
+                    </div>
+                </li>
+                <li class="nav-item-dropdown">
+                    <a href="/get-involved/" class="nav-link">Get Involved</a>
+                    <div class="dropdown-menu">
+                        <a href="/advocate/">Advocate for SPARC</a>
+                        <a href="/volunteer/">Volunteer</a>
+                        <a href="/participants/">Participants &amp; Families</a>
+                        <a href="https://teamlocker.squadlocker.com/#/lockers/specially-adapted-resource-centers" target="_blank" rel="noopener noreferrer">Purchase SPARC Swag</a>
+                    </div>
+                </li>
+                <li class="nav-item-dropdown nav-donate-dropdown">
+                    <a href="/donate-checkout/" class="nav-link nav-donate" aria-haspopup="true" aria-expanded="false">Donate<span class="caret" aria-hidden="true"></span></a>
+                    <div class="dropdown-menu donate-dropdown-menu" role="menu">
+                        <a href="/donate-checkout/" role="menuitem">
+                            <span>
+                                <span class="dd-label">Give Once</span>
+                                <span class="dd-sub">Make a one-time gift</span>
+                            </span>
+                        </a>
+                        <a href="/monthly/" class="dd-monthly" role="menuitem">
+                            <span>
+                                <span class="dd-label">Give Monthly</span>
+                                <span class="dd-sub">Light the Way monthly donor</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="pledge-hero">
+        <div class="container">
+            <span class="pledge-eyebrow">An Evening to SPARCle &bull; Support</span>
+            <div class="support-soldout">Tickets are sold out</div>
+            <h1>You Can Still Support SPARC!</h1>
+            <div class="gala-divider" aria-hidden="true">
+                <span class="gala-divider-rule"></span>
+                <span class="gala-divider-diamond"></span>
+                <span class="gala-divider-rule"></span>
+            </div>
+            <p class="pledge-hero-sub">Thank you, Northern Virginia &mdash; every seat at An Evening to SPARCle 2026 is spoken for. Your <strong>sponsorship</strong> or <strong>gift of any amount</strong> still helps adults with disabilities live an adventure of connection, purpose, and belonging.</p>
+            <p class="pledge-hero-meta">Saturday, November 14, 2026 &bull; Washington Dulles Airport Marriott</p>
+        </div>
+    </section>
+
+    <main id="main-content">
+        <section class="support-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sponsor the Evening or Make a Gift</h2>
+                    <p>Choose a sponsorship level to fill in your amount, or enter any amount you like in the form below. Every dollar goes straight to work in our centers.</p>
+                </div>
+
+                <div class="level-chips" id="levelChips" role="group" aria-label="Sponsorship levels">
+                    <button type="button" class="level-chip" data-level="Friend" data-amount="500"><span class="lc-name">Friend</span><span class="lc-amount">$500</span></button>
+                    <button type="button" class="level-chip" data-level="Advocate" data-amount="1000"><span class="lc-name">Advocate</span><span class="lc-amount">$1,000</span></button>
+                    <button type="button" class="level-chip" data-level="Partner" data-amount="2500"><span class="lc-name">Partner</span><span class="lc-amount">$2,500</span></button>
+                    <button type="button" class="level-chip" data-level="Leader" data-amount="5000"><span class="lc-name">Leader</span><span class="lc-amount">$5,000</span></button>
+                    <button type="button" class="level-chip" data-level="Hero" data-amount="7500"><span class="lc-name">Hero</span><span class="lc-amount">$7,500</span></button>
+                    <button type="button" class="level-chip" data-level="Champion" data-amount="10000"><span class="lc-name">Champion</span><span class="lc-amount">$10,000</span></button>
+                    <button type="button" class="level-chip" data-level="Event Sponsor" data-amount="25000"><span class="lc-name">Event Sponsor</span><span class="lc-amount">$25,000</span></button>
+                </div>
+                <p class="level-note">Questions about sponsor benefits or recognition? <a href="/contact/">Contact us</a> and we&rsquo;ll be glad to help.</p>
+
+                <div class="support-card">
+                    <h3>Support An Evening to SPARCle</h3>
+                    <p class="sc-sub" id="supportSub">Complete the secure form below. Thank you for standing with SPARC.</p>
+                    <div class="form-wrapper">
+                        <!-- Bloomerang donation widget 4917248 — "Thank You for Sponsoring our
+                             2026 Evening to SPARCle!" (open amount; no ticket/level radios). -->
+                        <script src="https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/speciallyadaptedresourceclubs/.widget-js/4917248.js" type="text/javascript"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Questions About Sponsorship?</h2>
+                <p>Contact us to discuss custom packages or learn more about partnership opportunities.</p>
+                <div class="cta-buttons">
+                    <a href="/contact/" class="btn btn-white btn-lg">Contact Us</a>
+                    <a href="/gala/" class="btn btn-secondary btn-lg">About the Gala</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="color: white;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="/images/SPARC_logo_white.png" alt="SPARC" style="height: 60px; width: auto; margin-bottom: 15px;">
+                    <p>Specially Adapted Resource Centers provides community-integrated day programs for adults with severe and multiple disabilities in Northern Virginia. We believe every adult deserves a meaningful life filled with connection, purpose, and belonging.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100064372517571" class="social-link" aria-label="Facebook" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/sparc.solutions/" class="social-link" aria-label="Instagram" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/specially-adapted-resource-centers" class="social-link" aria-label="LinkedIn" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@SPARC_VA" class="social-link" aria-label="YouTube" target="_blank">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="mailto:debi@sparcsolutions.org" class="social-link" aria-label="Email">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/programs/">Programs</a></li>
+                        <li><a href="/locations/">Locations</a></li>
+                        <li><a href="/events/">Events</a></li>
+                        <li><a href="/stories/">Stories &amp; Impact</a></li>
+                        <li><a href="/donate-checkout/">Donate</a></li>
+                        <li><a href="/monthly/"><strong>Monthly Giving</strong></a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/financials/">Annual Reports</a></li>
+                        <li><a href="/board/">Board of Directors</a></li>
+                        <li><a href="/news/">News &amp; Press</a></li>
+                        <li><a href="/get-involved/">Get Involved</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><strong>Mailing Address:</strong><br>
+                    1775 Tysons Blvd., Fifth Floor<br>
+                    Tysons, VA 22102</p>
+                    <p><strong>Phone:</strong> <a href="tel:571-407-1807" style="color: white;">(571) 407-1807</a></p>
+                    <p><a href="mailto:debi@sparcsolutions.org" style="color: white;">debi@sparcsolutions.org</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom-bar" style="background: white; padding: 30px 0; color: var(--sparc-dark-navy);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <p style="margin: 0 0 5px 0; color: var(--sparc-dark-navy);">&copy; 2025 SPARC - Specially Adapted Resource Centers. All rights reserved.</p>
+                <p style="margin: 0 0 10px 0; color: var(--sparc-dark-navy);">501(c)(3) Nonprofit Organization | EIN: 20-5513060</p>
+                <nav aria-label="Legal links">
+                    <a href="/accessibility/" style="color: var(--sparc-dark-navy); text-decoration: none;">Accessibility</a> |
+                    <a href="/contact/" style="color: var(--sparc-dark-navy); text-decoration: none;">Contact</a>
+                </nav>
+            </div>
+            <img src="/images/Powered by Google.png" alt="Powered by Google" style="height: 160px; width: auto;">
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script>
+    (function () {
+        'use strict';
+
+        // Sponsorship levels (same table as /gala/). A chip, or a deep link such
+        // as /gala-support/?level=Hero or ?amount=7500, fills the widget's amount.
+        var chips = Array.prototype.slice.call(document.querySelectorAll('.level-chip'));
+        var sub = document.getElementById('supportSub');
+
+        function amountInput() { return document.getElementById('donation-amount'); }
+
+        function setAmount(amount, levelName) {
+            var input = amountInput();
+            if (input && amount > 0) {
+                input.value = String(amount);
+                try {
+                    input.dispatchEvent(new Event('input', { bubbles: true }));
+                    input.dispatchEvent(new Event('change', { bubbles: true }));
+                    if (window.jQuery) { window.jQuery(input).trigger('change').trigger('keyup'); }
+                } catch (e) { /* ignore */ }
+            }
+            chips.forEach(function (c) {
+                var on = levelName && c.getAttribute('data-level') === levelName;
+                c.classList.toggle('is-selected', !!on);
+                c.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+            if (sub && levelName) {
+                sub.textContent = levelName + ' sponsorship selected \u2014 $' + Number(amount).toLocaleString('en-US') + ' is filled in below. Adjust the amount if you like.';
+            }
+            if (window.gtag && levelName) {
+                gtag('event', 'select_sponsorship_level', { event_category: 'gala', event_label: levelName, value: amount });
+            }
+        }
+
+        chips.forEach(function (chip) {
+            chip.setAttribute('aria-pressed', 'false');
+            chip.addEventListener('click', function () {
+                var amount = parseInt(chip.getAttribute('data-amount'), 10);
+                setAmount(amount, chip.getAttribute('data-level'));
+                var card = document.querySelector('.support-card');
+                if (card) { card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        // Deep links: ?level=<name> and/or ?amount=<n>. The widget loads
+        // asynchronously, so poll briefly for the amount field.
+        var params = new URLSearchParams(window.location.search);
+        var level = params.get('level');
+        var amount = parseInt(params.get('amount') || '', 10);
+        if (level && !(amount > 0)) {
+            chips.some(function (c) {
+                if (c.getAttribute('data-level').toLowerCase() === level.toLowerCase()) {
+                    amount = parseInt(c.getAttribute('data-amount'), 10);
+                    level = c.getAttribute('data-level');
+                    return true;
+                }
+                return false;
+            });
+        }
+        if (amount > 0) {
+            var tries = 0;
+            (function waitForWidget() {
+                if (amountInput()) { setAmount(amount, level); return; }
+                if (++tries < 60) { setTimeout(waitForWidget, 250); }
+            })();
+        }
+    })();
+    </script>
+</body>
+</html>
