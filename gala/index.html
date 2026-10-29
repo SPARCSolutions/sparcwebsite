@@ -1265,6 +1265,44 @@
             color: var(--gala-green-deep);
             transform: translateY(-2px);
         }
+        /* Sold-out stamp over the (now inert) ticket CTA */
+        .page-gala .gala-soldout-wrap {
+            position: relative;
+            display: inline-block;
+        }
+        .page-gala .gala-btn-tickets.is-soldout {
+            cursor: default;
+            opacity: 0.82;
+            filter: saturate(0.7);
+            pointer-events: none;
+        }
+        .page-gala .gala-soldout-stamp {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 196px;
+            height: auto;
+            transform: translate(-50%, -50%) rotate(-11deg);
+            pointer-events: none;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+            z-index: 2;
+        }
+        .page-gala .gala-soldout-link {
+            display: block;
+            margin: 14px auto 0;
+            max-width: 320px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+            color: var(--gala-gold-bright);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .page-gala .gala-soldout-link:hover,
+        .page-gala .gala-soldout-link:focus-visible {
+            color: #fff;
+        }
         .page-gala .gala-btn-sponsorships {
             background: var(--gala-green-deep);
             color: var(--gala-gold);
@@ -1480,6 +1518,28 @@
         }
 
         /* ---------- Tickets & raffle ---------- */
+        .page-gala .ticket-card-soldout {
+            position: relative;
+            cursor: default;
+            opacity: 0.85;
+        }
+        .page-gala .ticket-card-soldout:hover {
+            transform: none;
+            box-shadow: 0 4px 20px rgba(24, 64, 48, 0.08);
+            border-color: var(--gala-gold);
+        }
+        .page-gala .ticket-card-soldout .btn { pointer-events: none; opacity: 0.6; }
+        .page-gala .ticket-soldout-stamp {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 78%;
+            max-width: 240px;
+            height: auto;
+            transform: translate(-50%, -50%) rotate(-14deg);
+            pointer-events: none;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+        }
         .page-gala .tickets-section {
             background: var(--gala-ivory);
         }
@@ -1787,7 +1847,14 @@
 
               <div class="gala-hero-info-col">
                 <div class="gala-hero-buttons">
-                    <a href="/gala/?tier=ticket" onclick="event.preventDefault(); selectTier('18879488');" class="btn btn-lg gala-btn gala-btn-tickets">Tickets On Sale Now</a>
+                    <!-- Tickets sold out (Oct 2026): the CTA stays for the stamp to
+                         sit on, but it is inert — nothing opens the ticket form. -->
+                    <div class="gala-soldout-wrap">
+                        <span class="btn btn-lg gala-btn gala-btn-tickets is-soldout" aria-hidden="true">Tickets On Sale Now</span>
+                        <img src="/images/gala/sold-out-stamp.svg" alt="" aria-hidden="true" class="gala-soldout-stamp" width="340" height="140">
+                        <span class="gala-sr-only">Tickets are sold out.</span>
+                    </div>
+                    <a href="/gala-support/" class="gala-soldout-link">Tickets are sold out but you can still support SPARC!</a>
                 </div>
 
                 <!-- Date / venue block: live text styled after the date-venue graphic -->
@@ -1832,7 +1899,7 @@
 
             <!-- Secondary CTAs: one row across the hero, under both graphics -->
             <div class="gala-hero-actions">
-                <a href="/gala-sponsorships/" class="btn btn-lg gala-btn gala-btn-sponsorships">Sponsorships Available</a>
+                <a href="/gala-support/" class="btn btn-lg gala-btn gala-btn-sponsorships">Sponsorships Available</a>
                 <a href="/auctiondonation/" class="btn btn-lg gala-btn gala-btn-sponsorships">Donate an Auction Item</a>
             </div>
         </div>
@@ -2053,7 +2120,7 @@
                     </div>
                 </div>
                 <div style="text-align:center; margin-top:36px;">
-                    <a href="/gala-sponsorships/" class="btn btn-lg gala-btn gala-btn-sponsorships">Become a Sponsor &mdash; Pay Now or Pledge &amp; Upload Your Logo</a>
+                    <a href="/gala-support/" class="btn btn-lg gala-btn gala-btn-sponsorships">Become a Sponsor</a>
                 </div>
             </div>
         </section>
@@ -2251,11 +2318,11 @@
             <div class="container">
                 <div class="section-header fade-in">
                     <h2>Tickets &amp; Raffle</h2>
-                    <p>Purchase your gala admission or try your luck with raffle tickets for a chance to win exciting prizes</p>
+                    <p>Gala admission is sold out &mdash; thank you! You can still try your luck with raffle tickets for a chance to win exciting prizes</p>
                 </div>
 
                 <div class="tickets-grid">
-                    <div class="ticket-card fade-in" onclick="selectTier('18879488')">
+                    <div class="ticket-card ticket-card-soldout fade-in">
                         <div class="ticket-card-header">
                             <div class="ticket-qty">1</div>
                             <div class="ticket-label">Gala Ticket</div>
@@ -2265,8 +2332,10 @@
                             <div class="ticket-desc">General Admission</div>
                         </div>
                         <div class="ticket-card-cta">
-                            <span class="btn btn-primary">Purchase</span>
+                            <span class="btn btn-primary" aria-hidden="true">Purchase</span>
                         </div>
+                        <img src="/images/gala/sold-out-stamp.svg" alt="" aria-hidden="true" class="ticket-soldout-stamp" width="340" height="140">
+                        <span class="gala-sr-only">Gala tickets are sold out.</span>
                     </div>
 
                     <div class="ticket-card fade-in" onclick="selectRaffle('4932608')">
@@ -2368,16 +2437,6 @@
                 </div>
                 <div class="form-wrapper">
                     <script src="https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/speciallyadaptedresourceclubs/.widget-js/18877440.js" type="text/javascript"></script>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sponsorship Form Modal (embeds the bare /gala-sponsorships-form/ page) -->
-        <div class="form-modal-overlay" id="sponsorFormModal" style="display: none;" role="dialog" aria-modal="true" aria-label="Become a sponsor">
-            <div class="form-modal">
-                <button class="form-modal-close" onclick="closeSponsorModal()" aria-label="Close">&times;</button>
-                <div class="form-wrapper">
-                    <iframe id="sponsorFormIframe" src="" title="Sponsorship form" loading="lazy" style="width: 100%; height: 85vh; border: none; display: block;"></iframe>
                 </div>
             </div>
         </div>
@@ -2808,46 +2867,18 @@
             document.body.style.overflow = '';
         }
 
-        // Open the sponsorship form in a modal, preselecting the chosen level so
-        // the form pops up with the amount already filled in (no full-page redirect).
+        // Every sponsorship ask on the site goes to /gala-support/, which embeds
+        // Bloomerang donation widget 4917248. The level is passed along so the
+        // page fills in the matching amount. (Oct 2026 — tickets sold out; the
+        // old pay-or-pledge modal is no longer used.)
         function openSponsorModal(level) {
             if (window.GalaTracking) {
-                // The sponsorship widget lives in the iframe, which applies the
-                // Bloomerang appeal itself; only the GA event belongs here.
                 window.GalaTracking.track('sponsorship', { label: level || 'Sponsorship' });
             }
-            var modal = document.getElementById('sponsorFormModal');
-            var iframe = document.getElementById('sponsorFormIframe');
-            var src = '/gala-sponsorships-form/';
-            if (level) { src += '?level=' + encodeURIComponent(level); }
-            iframe.src = src;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            var href = '/gala-support/';
+            if (level) { href += '?level=' + encodeURIComponent(level); }
+            window.location.href = href;
         }
-
-        // Close the sponsorship modal (and unload the iframe to reset the form).
-        function closeSponsorModal() {
-            var modal = document.getElementById('sponsorFormModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
-            document.getElementById('sponsorFormIframe').src = '';
-        }
-
-        // Close the sponsorship modal on overlay click or Escape.
-        document.addEventListener('DOMContentLoaded', function() {
-            var sponsorModal = document.getElementById('sponsorFormModal');
-            if (sponsorModal) {
-                sponsorModal.addEventListener('click', function(e) {
-                    if (e.target === sponsorModal) { closeSponsorModal(); }
-                });
-            }
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                var m = document.getElementById('sponsorFormModal');
-                if (m && m.style.display !== 'none') { closeSponsorModal(); }
-            }
-        });
 
         // Tickets, sponsorships and raffle are three separate Bloomerang forms,
         // so re-stamp the appeal whenever the supporter switches selection by
@@ -2871,7 +2902,8 @@
             var level = params.get('level');
             if (level) { openSponsorModal(level); return; }
 
-            if (params.get('tier') === 'ticket') { selectTier('18879488'); }
+            // /gala/?tier=ticket used to open the ticket form; tickets are sold
+            // out, so that link now just lands on the stamped hero.
         });
     </script>
 

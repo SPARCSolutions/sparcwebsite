@@ -243,6 +243,9 @@ p {
     font-size: 0.95rem;
 }
 .announcement-bar__cta:hover, .announcement-bar__cta:focus-visible { text-decoration: underline; }
+@media (max-width: 640px) {
+    .announcement-bar__cta { white-space: normal; text-align: center; line-height: 1.3; }
+}
 .announcement-bar__close {
     position: absolute;
     right: 8px;

@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Site-wide announcement bar (promotes the annual gala across every page).
 // Bump ANNOUNCE_KEY to re-show the bar to visitors who previously dismissed it.
 function initAnnouncementBar() {
-    var ANNOUNCE_KEY = 'sparcAnnouncementDismissed:gala-2026';
+    var ANNOUNCE_KEY = 'sparcAnnouncementDismissed:gala-2026-soldout';
     var EVENT_LINK = '/gala/';                 // event name + date → gala overview
-    var CTA_LINK = '/gala-sponsorships/';      // CTA → tickets, raffle & sponsorship
+    var CTA_LINK = '/gala-support/';           // CTA → sponsorship / support form (tickets sold out)
 
     // Respect a prior dismissal.
     try {
@@ -35,7 +35,7 @@ function initAnnouncementBar() {
                 '<span class="announcement-bar__title">An Evening to SPARCle</span>' +
                 '<span class="announcement-bar__date">Saturday, November 14, 2026</span>' +
             '</a>' +
-            '<a class="announcement-bar__cta" href="' + CTA_LINK + '">Reserve your seat or become a sponsor &rarr;</a>' +
+            '<a class="announcement-bar__cta" href="' + CTA_LINK + '">Tickets are sold out but you can still support SPARC! &rarr;</a>' +
             '<button type="button" class="announcement-bar__close" aria-label="Dismiss announcement">&times;</button>' +
         '</div>';
 
