@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
 });
 
-// Site-wide announcement bar (promotes the annual gala across every page).
+// Site-wide announcement bar (promotes monthly giving across every page).
 // Bump ANNOUNCE_KEY to re-show the bar to visitors who previously dismissed it.
 function initAnnouncementBar() {
-    var ANNOUNCE_KEY = 'sparcAnnouncementDismissed:gala-2026-soldout';
-    var EVENT_LINK = '/gala/';                 // event name + date → gala overview
-    var CTA_LINK = '/gala-support/';           // CTA → sponsorship / support form (tickets sold out)
+    var ANNOUNCE_KEY = 'sparcAnnouncementDismissed:monthly-donor-2026';
+    var CTA_LINK = '/monthly/';                // Light the Way monthly giving page
 
     // Respect a prior dismissal.
     try {
@@ -31,11 +30,11 @@ function initAnnouncementBar() {
     bar.setAttribute('aria-label', 'Site announcement');
     bar.innerHTML =
         '<div class="announcement-bar__inner">' +
-            '<a class="announcement-bar__link" href="' + EVENT_LINK + '">' +
-                '<span class="announcement-bar__title">An Evening to SPARCle</span>' +
-                '<span class="announcement-bar__date">Saturday, November 14, 2026</span>' +
+            '<a class="announcement-bar__link" href="' + CTA_LINK + '">' +
+                '<span class="announcement-bar__title">Become a Monthly Donor</span>' +
+                '<span class="announcement-bar__date">Support adults with disabilities all year long</span>' +
             '</a>' +
-            '<a class="announcement-bar__cta" href="' + CTA_LINK + '">Tickets are sold out but you can still support SPARC! &rarr;</a>' +
+            '<a class="announcement-bar__cta" href="' + CTA_LINK + '">Give monthly &rarr;</a>' +
             '<button type="button" class="announcement-bar__close" aria-label="Dismiss announcement">&times;</button>' +
         '</div>';
 
